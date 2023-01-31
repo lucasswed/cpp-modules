@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 14:59:00 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/01/31 16:51:35 by lucas-ma         ###   ########.fr       */
+/*   Created: 2023/01/31 16:21:16 by lucas-ma          #+#    #+#             */
+/*   Updated: 2023/01/31 18:55:10 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# include "Contact.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+# include <string>
 
-class PhoneBook {
-	public:
-
-		PhoneBook(void);
-		~PhoneBook(void);
-
-		void	create_contact(void);
-
+class Contact {
+private:
+	std::string first_name;
+	std::string last_name;
+	std::string nickname;
+	std::string phone_number;
+	std::string dark_secret;
+	static int	nb_of_instances;
+public:
+	Contact(void);
+	~Contact(void);
 };
 
 #endif
