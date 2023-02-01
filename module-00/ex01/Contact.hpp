@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:21:16 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/01 12:45:31 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:29:56 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
 	std::string get_lname(void) const;
 	std::string get_nickname(void) const;
 	std::string get_phonenb(void) const;
+	void		add(void);
 };
 
 #endif
