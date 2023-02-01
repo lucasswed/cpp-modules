@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:22:47 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/01 15:53:23 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/01 21:36:02 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 #include "Contact.hpp"
 
 Contact::Contact(void) {
-
-	std::cout << "Contructor called!" << std::endl;
-	Contact::nb_of_instances++;
 	return;
 }
 
 Contact::~Contact(void) {
-
-	std::cout << "Distructor called!" << std::endl;
 	return;
 }
 
-int Contact::nb_of_instances = 0;
+int Contact::nb_of_contacts = 0;
 
 std::string	Contact::get_fname(void) const {
 	return (this->_first_name);
@@ -42,6 +37,10 @@ std::string	Contact::get_nickname(void) const {
 
 std::string	Contact::get_phonenb(void) const {
 	return (this->_phone_number);
+}
+
+std::string	Contact::get_dark_secret(void) const {
+	return (this->_dark_secret);
 }
 
 void	Contact::add(void) {
@@ -65,4 +64,5 @@ void	Contact::add(void) {
 	std::cin >> std::ws >> this->_dark_secret;
 	if (std::cin.eof() == 1)
 		return;
+	Contact::nb_of_contacts++;
 }

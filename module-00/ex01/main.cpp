@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 15:01:27 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/01 16:10:13 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:00:02 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,15 @@ int	main(void) {
 	
 	do {
 		std::cout << std::endl << "What do you want to do?" << std::endl;
+		std::cout << "|-----------------------------------------";
+		std::cout << "------------------------------------------";
+		std::cout << "-----------------------------------|" << std::endl;
 		std::cout << "| Write \'ADD\' to add a contact (limit 8) | ";
 		std::cout << "Write \'SEARCH\' to print the contact list | ";
 		std::cout << "Write \'EXIT\' to exit the program |" << std::endl;
+		std::cout << "|-----------------------------------------";
+		std::cout << "------------------------------------------";
+		std::cout << "-----------------------------------|" << std::endl;
 		std::cout << "| > ";
 		std::cin >> std::ws >> user_input;
 		if (std::cin.eof() == 1)
@@ -31,7 +37,9 @@ int	main(void) {
 			phonebook.add();
 		else if (user_input == "SEARCH")
 			phonebook.search();
-		}
+		// else if (user_input == "CLEAR")
+		// 	system("clear");
+	}
 	while (user_input != "EXIT");
 
 	return (0);
