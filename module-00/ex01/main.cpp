@@ -6,12 +6,13 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 15:01:27 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/01 22:00:02 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:07:52 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 
 int	main(void) {
@@ -30,15 +31,15 @@ int	main(void) {
 		std::cout << "------------------------------------------";
 		std::cout << "-----------------------------------|" << std::endl;
 		std::cout << "| > ";
-		std::cin >> std::ws >> user_input;
+		std::getline(std::cin >> std::ws, user_input);
 		if (std::cin.eof() == 1)
 			return (EXIT_FAILURE);
 		if (user_input == "ADD")
 			phonebook.add();
 		else if (user_input == "SEARCH")
 			phonebook.search();
-		// else if (user_input == "CLEAR")
-		// 	system("clear");
+		else if (user_input == "CLEAR")
+			system("clear");
 	}
 	while (user_input != "EXIT");
 
