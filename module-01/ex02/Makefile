@@ -6,13 +6,13 @@
 #    By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 15:07:52 by lucas-ma          #+#    #+#              #
-#    Updated: 2023/02/03 14:42:09 by lucas-ma         ###   ########.fr        #
+#    Updated: 2023/02/03 15:41:09 by lucas-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################ PROGRAM ################
 
-NAME	    =    BraiiiiiiinnnzzzZ
+NAME	    =    stringREF
 
 ################ TERMINAL ###############
 
@@ -41,7 +41,7 @@ _BIN    =        ./
 CC      =        c++
 CFLAGS      =        -Wall -Werror -Wextra -std=c++98#-g -fsanitize=address
 #valgrind --leak-check=full --show-leak-kinds=all ./minishell
-SRCS    =        main.cpp Zombie.cpp
+SRCS    =        main.cpp
 
 OBJS    =        $(patsubst $(_SRC)%.c,$(_OBJ)%.o,$(SRCS))
 DEPS    =        

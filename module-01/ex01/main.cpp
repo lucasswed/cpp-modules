@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 21:01:11 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/03 14:03:59 by lucas-ma         ###   ########.fr       */
+/*   Created: 2023/02/03 14:39:39 by lucas-ma          #+#    #+#             */
+/*   Updated: 2023/02/03 14:59:38 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-# include <string>
-
-class Zombie {
-	private:
-		std::string	_name;
-	public:
-		Zombie(std::string name);
-		~Zombie(void);
-
-		void announce(void);
-		Zombie* newZombie(std::string name);
-		void randomChump(std::string name);
-};
-
-#endif
+int main(void)
+{
+	Zombie dario("dario");
+	Zombie* beatriz;
+	
+	beatriz = dario.zombieHorde(10, "beatriz");
+	for (int i = 0; i < 10; i++)
+		beatriz[i].announce();
+	delete [] beatriz;
+	return (0);
+}
