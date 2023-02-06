@@ -6,11 +6,9 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 17:35:20 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/06 14:10:32 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:24:06 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <iostre
 
 #include <iostream>
 #include <fstream>
@@ -18,22 +16,48 @@
 #include <string.h>
 #include <stdlib.h>
 
-int create_replacing_file(std::ifstream my_file, int ac, char **av)
+void	replace_token_in_line(std::string& line, std::string& token, std::string& sub)
+{
+	while (line.find(token) != std::string::npos)
+	{
+		std::string temp;
+		
+		temp = line.substr(line.find(token) + token.size());
+		line = line.substr(0, line.find(token));
+		line.append(sub);
+		line.append(temp);
+	}
+}
+
+void	fill_replace_file(std::ifstream& my_file, std::ofstream& replace_file, std::string& str1, std::string& str2)
+{
+	std::string line;
+
+	std::getline(my_file, line, '\0');
+	if (line.find(str1) != std::string::npos && str1.empty() == false)
+		replace_token_in_line(line, str1, str2);
+	replace_file.write(line.c_str(), line.size());	
+}
+
+int create_replacing_file(std::ifstream& my_file, char **av)
 {
 	std::string str1;
 	std::string str2;
 	std::string name_rp_file;
 	std::ofstream replace_file;
-	size_t		pos_of_dot;
 
 	str1 = av[2];
 	str2 = av[3];
-	pos_of_dot = name_rp_file.rfind(".");
-	name_rp_file = name_rp_file.substr(0, pos_of_dot);
-	name_rp_file += std::string("replace");
-	(void)my_file;
-	(void)ac;
-	std::cout << name_rp_file << std::endl;
+	name_rp_file = av[1];
+	name_rp_file += std::string(".replace");
+	replace_file.open(name_rp_file);
+	if (replace_file.is_open())
+		fill_replace_file(my_file, replace_file, str1, str2);
+	else
+	{
+		std::cout << "Error creating the file" << std::endl;
+		return (EXIT_FAILURE);
+	}
 	return (1);
 }
 
@@ -50,8 +74,7 @@ int main(int ac, char **av) {
 	
 	my_file.open(av[1]);
 	if (my_file.is_open())
-		// std::cout << "file opened!" << std::endl;
-		create_replacing_file(my_file, ac, av);
+		create_replacing_file(my_file, av);
 	else
 	{
 		std::cout << "Error opening the file" << std::endl;
