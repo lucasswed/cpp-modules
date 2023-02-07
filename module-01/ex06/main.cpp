@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 15:54:36 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/07 12:30:12 by lucas-ma         ###   ########.fr       */
+/*   Created: 2023/02/06 17:06:49 by lucas-ma          #+#    #+#             */
+/*   Updated: 2023/02/07 14:06:26 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "Harl.hpp"
+#include <stdlib.h>
+#include <iostream>
+#include <string>
 
-Weapon::Weapon(std::string type) : _type(type) {
-}
+int	main(int ac, char **av) {
 
-Weapon::~Weapon(void) {
-}
-
-std::string const& Weapon::get_type(void) {
-	return (this->_type);
-}
-
-void	Weapon::setType(std::string type) {
-	this->_type = type;
+	if (ac != 2)
+	{
+		std::cout << "Error in arguments!" << std::endl;
+		std::cout << "Correct usage: ./harlFilter <one of the four levels>" << std::endl;
+		return (EXIT_FAILURE);
+	}
+	
+	return 0;
 }

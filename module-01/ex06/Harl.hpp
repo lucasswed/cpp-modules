@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 15:54:36 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/07 12:30:12 by lucas-ma         ###   ########.fr       */
+/*   Created: 2023/02/06 16:27:45 by lucas-ma          #+#    #+#             */
+/*   Updated: 2023/02/06 17:00:27 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-Weapon::Weapon(std::string type) : _type(type) {
-}
+# include <string>
 
-Weapon::~Weapon(void) {
-}
+class Harl {
+	private:
+		void debug(void) const;
+		void info(void) const;
+		void warning(void) const;
+		void error(void) const;
 
-std::string const& Weapon::get_type(void) {
-	return (this->_type);
-}
+		typedef struct s_harl {
+			std::string	name;
+			void		(Harl::*func)(void) const;
+		}				t_harl;
 
-void	Weapon::setType(std::string type) {
-	this->_type = type;
-}
+	public:
+		Harl(void);
+		~Harl(void);
+
+		void complain(std::string level);
+		t_harl init[4];
+};
+
+#endif
