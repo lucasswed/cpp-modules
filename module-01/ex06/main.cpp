@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 17:06:49 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/07 14:11:09 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/07 14:29:01 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,41 @@ int	main(int ac, char **av) {
 		std::cout << "Correct usage: ./harlFilter <one of the four levels>" << std::endl;
 		return (EXIT_FAILURE);
 	}
-	Harl
+	Harl harl;
 	std::string level(av[1]);
-	int	i;
+	int	lev;
 	
-	i = 0;
-	switch (level.compare())
+	lev = 4;
+	for (int i = 0; i < 4; i++)
 	{
-		case /* constant-expression */:
-			/* code */
+		if (level == harl.init[i].name)
+		{
+			lev = i;
 			break;
-		
+		}
+	}
+	switch (lev)
+	{
+		case 0:
+			harl.complain(harl.init[lev].name);
+			harl.complain(harl.init[++lev].name);
+			harl.complain(harl.init[++lev].name);
+			harl.complain(harl.init[++lev].name);
+			break;
+		case 1:
+			harl.complain(harl.init[lev].name);
+			harl.complain(harl.init[++lev].name);
+			harl.complain(harl.init[++lev].name);
+			break;
+		case 2:
+			harl.complain(harl.init[lev].name);
+			harl.complain(harl.init[++lev].name);
+			break;
+		case 3:
+			harl.complain(harl.init[lev].name);
+			break;
 		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 			break;
 	}
 	return 0;
