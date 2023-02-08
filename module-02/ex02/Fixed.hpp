@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:41:15 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/08 15:50:29 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:06:13 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,12 @@ class Fixed {
 		bool	operator>=(Fixed const& rhs) const;
 		bool	operator<=(Fixed const& rhs) const;
 
-		// 
+		// methods
 		int		getRawBits(void) const;
 		void	setRawBits(int const& raw);
 		float	toFloat(void) const;
 		int		toInt(void) const;
+		static 
 };
 
 std::ostream&	operator<<(std::ostream& o, Fixed const& i);
