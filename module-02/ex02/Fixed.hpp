@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:41:15 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/08 12:30:48 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:26:46 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ class Fixed {
 		~Fixed(void); //Canonical Form
 		
 		Fixed&	operator=(Fixed const& rhs); //Canonical Form
+		Fixed	operator+(Fixed const& rhs) const;
 		int		getRawBits(void) const;
 		void	setRawBits(int const& raw);
 		float	toFloat(void) const;
 		int		toInt(void) const;
-		
 };
 
 std::ostream&	operator<<(std::ostream& o, Fixed const& i);
