@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:41:15 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/08 14:26:46 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/08 15:50:29 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,24 @@ class Fixed {
 		Fixed(float const& src);
 		~Fixed(void); //Canonical Form
 		
+		// Overloads
 		Fixed&	operator=(Fixed const& rhs); //Canonical Form
 		Fixed	operator+(Fixed const& rhs) const;
+		Fixed	operator-(Fixed const& rhs) const;
+		Fixed	operator*(Fixed const& rhs) const;
+		Fixed	operator/(Fixed const& rhs) const;
+		Fixed&	operator++(void);
+		Fixed	operator++(int);
+		Fixed&	operator--(void);
+		Fixed	operator--(int);
+		bool	operator==(Fixed const& rhs) const;
+		bool	operator!=(Fixed const& rhs) const;
+		bool	operator>(Fixed const& rhs) const;
+		bool	operator<(Fixed const& rhs) const;
+		bool	operator>=(Fixed const& rhs) const;
+		bool	operator<=(Fixed const& rhs) const;
+
+		// 
 		int		getRawBits(void) const;
 		void	setRawBits(int const& raw);
 		float	toFloat(void) const;

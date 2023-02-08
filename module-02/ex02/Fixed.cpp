@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:43:16 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/08 14:28:58 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/08 15:49:34 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,77 @@ Fixed&	Fixed::operator=(Fixed const& rhs) {
 }
 
 Fixed	Fixed::operator+(Fixed const& rhs) const {
-	
+	return (Fixed (this->toFloat() + rhs.toFloat()));
+}
+
+Fixed	Fixed::operator-(Fixed const& rhs) const {
+	return (Fixed (this->toFloat() - rhs.toFloat()));
+}
+
+Fixed	Fixed::operator*(Fixed const& rhs) const {
+	return (Fixed (this->toFloat() * rhs.toFloat()));
+}
+
+Fixed	Fixed::operator/(Fixed const& rhs) const {
+	return (Fixed (this->toFloat() / rhs.toFloat()));
+}
+
+Fixed&	Fixed::operator++(void) {
+	this->_fp_num++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int) {
+	Fixed	temp(*this);
+	this->_fp_num++;
+	return temp;
+}
+
+Fixed&	Fixed::operator--(void) {
+	this->_fp_num--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int) {
+	Fixed	temp(*this);
+	this->_fp_num--;
+	return temp;
+}
+
+bool	Fixed::operator==(Fixed const& rhs) const {
+	if (this->toFloat() == rhs.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator!=(Fixed const& rhs) const {
+	if (this->toFloat() != rhs.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator>(Fixed const& rhs) const {
+	if (this->toFloat() > rhs.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator<(Fixed const& rhs) const {
+	if (this->toFloat() < rhs.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator>=(Fixed const& rhs) const {
+	if (this->toFloat() >= rhs.toFloat())
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator<=(Fixed const& rhs) const {
+	if (this->toFloat() <= rhs.toFloat())
+		return (true);
+	return (false);
 }
 
 int		Fixed::getRawBits(void) const {
