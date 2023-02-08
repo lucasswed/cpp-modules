@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:41:15 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/07 17:23:35 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:07:25 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 class Fixed {
 	private:
-		int	_raw_bits;
+		int	_fp_num;
 		static int const	_frac_bits = 8;
 
 	public:
