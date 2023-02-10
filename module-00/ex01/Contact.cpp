@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:22:47 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/01 21:36:02 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:09:54 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,23 +45,23 @@ std::string	Contact::get_dark_secret(void) const {
 
 void	Contact::add(void) {
 	std::cout << "Write the contact first name: ";
-	std::cin >> std::ws >> this->_first_name;
+	std::getline(std::cin >> std::ws, this->_first_name);
 	if (std::cin.eof() == 1)
 		return;
 	std::cout << "Write the contact last name: ";
-	std::cin >> std::ws >> this->_last_name;
+	std::getline(std::cin >> std::ws, this->_last_name);
 	if (std::cin.eof() == 1)
 		return;
 	std::cout << "Write the contact nickname: ";
-	std::cin >> std::ws >> this->_nickname;
+	std::getline(std::cin >> std::ws, this->_nickname);
 	if (std::cin.eof() == 1)
 		return;
 	std::cout << "Write the contact phone number: ";
-	std::cin >> std::ws >> this->_phone_number;
+	std::getline(std::cin >> std::ws, this->_phone_number);
 	if (std::cin.eof() == 1)
 		return;
 	std::cout << "Write the contact darkest secret: ";
-	std::cin >> std::ws >> this->_dark_secret;
+	std::getline(std::cin >> std::ws, this->_dark_secret);
 	if (std::cin.eof() == 1)
 		return;
 	Contact::nb_of_contacts++;
