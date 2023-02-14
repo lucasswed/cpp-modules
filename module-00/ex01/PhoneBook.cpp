@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:58:57 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/03 12:31:41 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:44:55 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ PhoneBook::~PhoneBook(void){
 }
 
 void	PhoneBook::add(void) {
-	if (Contact::nb_of_contacts >= 8)
-		this->contact[Contact::nb_of_contacts % 8].~Contact();
+	// if (Contact::nb_of_contacts >= 8)
+	// 	this->contact[Contact::nb_of_contacts % 8].~Contact();
 	this->contact[Contact::nb_of_contacts % 8].add();
 	return;
 }
