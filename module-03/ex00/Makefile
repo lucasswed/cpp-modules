@@ -6,13 +6,13 @@
 #    By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 15:07:52 by lucas-ma          #+#    #+#              #
-#    Updated: 2023/01/30 18:29:41 by lucas-ma         ###   ########.fr        #
+#    Updated: 2023/02/08 17:11:40 by lucas-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################ PROGRAM ################
 
-NAME	    =    megaphone
+NAME	    =    bsp
 
 ################ TERMINAL ###############
 
@@ -41,7 +41,7 @@ _BIN    =        ./
 CC      =        c++
 CFLAGS      =        -Wall -Werror -Wextra -std=c++98#-g -fsanitize=address
 #valgrind --leak-check=full --show-leak-kinds=all ./minishell
-SRCS    =        megaphone.cpp
+SRCS    =        main.cpp 
 
 OBJS    =        $(patsubst $(_SRC)%.c,$(_OBJ)%.o,$(SRCS))
 DEPS    =        

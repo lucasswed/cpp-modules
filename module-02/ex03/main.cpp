@@ -11,21 +11,31 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.hpp"
+#include "Point.hpp"
 
-#include <iostream>
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	Fixed c(Fixed( 5.05f ) * Fixed( 2 ));
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+int	main(void) {
 
+	Point	a(0.0, 0.0);
+	Point	b(2.0, 0.0);
+	Point	c(1.0, 2.0);
+	Point	point(1.0f, 1.0f);
+
+	if (bsp(a, b, c, point) == true)
+		std::cout << "The point belongs to the triangle" << std::endl;
+	else
+		std::cout << "The point is OUT!" << std::endl;
+	Point	d(4.2f, 2.25f);
+	d = point;
+	if (bsp(a, b, c, d) == true)
+		std::cout << "The point belongs to the triangle" << std::endl;
+	else
+		std::cout << "The point is OUT!" << std::endl;
+	Point	newPoint(-157.5f, -200.5f);
+	if (bsp(a, b, c, newPoint) == true)
+		std::cout << "The point belongs to the triangle" << std::endl;
+	else
+		std::cout << "The point is OUT!" << std::endl;
 	return 0;
 }

@@ -21,7 +21,7 @@ Point::Point(Point const& src) {
 	return;
 }
 
-Point::Point(float const& x, float const& y) : x(x), y(y) {
+Point::Point(float const& x1, float const& y1) : x(x1), y(y1) {
 }
 
 Point::~Point(void) {
@@ -37,6 +37,6 @@ Fixed	Point::get_y(void) const {
 
 Point&	Point::operator=(Point const& rhs) {
 	(void)rhs;
-	std::cerr << "Cannot assign to const variables!" << std::endl;
+	std::cerr << "Cannot assign to const values, object keeps original values." << std::endl;
 	return (*this);
 }
