@@ -15,14 +15,14 @@
 #include <string>
 
 Harl::Harl(void) {
-	this->init[0].name = "DEBUG";
-	this->init[0].func = &Harl::debug;
-	this->init[1].name = "INFO";
-	this->init[1].func = &Harl::info;
-	this->init[2].name = "WARNING";
-	this->init[2].func = &Harl::warning;
-	this->init[3].name = "ERROR";
-	this->init[3].func = &Harl::error;
+	this->_init[0].name = "DEBUG";
+	this->_init[0].func = &Harl::debug;
+	this->_init[1].name = "INFO";
+	this->_init[1].func = &Harl::info;
+	this->_init[2].name = "WARNING";
+	this->_init[2].func = &Harl::warning;
+	this->_init[3].name = "ERROR";
+	this->_init[3].func = &Harl::error;
 }
 
 Harl::~Harl(void) {
@@ -47,7 +47,7 @@ void	Harl::error(void) const {
 void	Harl::complain(std::string level) {
 	for (int i = 0; i < 4; i++)
 	{
-		if (level == this->init[i].name)
-			(this->*init[i].func)();
+		if (level == this->_init[i].name)
+			(this->*_init[i].func)();
 	}
 }

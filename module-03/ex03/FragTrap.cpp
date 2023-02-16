@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:42:37 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/14 21:02:19 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:20:31 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 FragTrap::FragTrap(void) : ClapTrap() {
 	std::cout << "FragTrap default contructor called!" << std::endl;
+	this->_hit_pts = 100;
+	this->_attack_dmg = 30;
 }
 
 FragTrap::FragTrap(FragTrap const& src) : ClapTrap(src) {

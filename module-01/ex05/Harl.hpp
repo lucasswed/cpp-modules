@@ -27,12 +27,13 @@ class Harl {
 			void		(Harl::*func)(void) const;
 		}				t_harl;
 
+		t_harl _init[4];
+
 	public:
 		Harl(void);
 		~Harl(void);
 
 		void complain(std::string level);
-		t_harl init[4];
 };
 
 #endif

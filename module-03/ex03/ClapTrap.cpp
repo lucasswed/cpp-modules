@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:09:23 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/14 20:08:04 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:49:49 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 }
 
 void	ClapTrap::clapTrapStat(void) {
-	std::cout << std::endl << this->_name << " status:" << std::endl;
+	std::cout << std::endl << _name << " status:" << std::endl;
 	std::cout<< "Health: " << this->_hit_pts << std::endl;
 	std::cout<< "Energy: " << this->_energy_pts << std::endl << std::endl;
 }

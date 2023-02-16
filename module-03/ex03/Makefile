@@ -6,13 +6,13 @@
 #    By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 15:07:52 by lucas-ma          #+#    #+#              #
-#    Updated: 2023/02/14 19:58:10 by lucas-ma         ###   ########.fr        #
+#    Updated: 2023/02/16 14:35:13 by lucas-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################ PROGRAM ################
 
-NAME	    =    scavtrap
+NAME	    =    diamondtrap
 
 ################ TERMINAL ###############
 
@@ -39,9 +39,9 @@ _BIN    =        ./
 ############### COMPILER ################
 
 CC      =        c++
-CFLAGS      =        -Wall -Werror -Wextra -std=c++98#-g -fsanitize=address
+CFLAGS      =        -Wall -Werror -Wextra -std=c++98 -Wshadow -Wno-shadow #-g -fsanitize=address
 #valgrind --leak-check=full --show-leak-kinds=all ./minishell
-SRCS    =        main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS    =        main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS    =        $(patsubst $(_SRC)%.c,$(_OBJ)%.o,$(SRCS))
 DEPS    =        

@@ -6,17 +6,17 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:57:53 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/14 19:57:12 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:31:02 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void) {
 
 	// ClapTrap	soldier("Soldier");
 	// ClapTrap	general("General");
-	ScavTrap	commander("Commander");
+	DiamondTrap	commander("Commander");
 
 	commander.takeDamage(4);
 	commander.clapTrapStat();
@@ -33,10 +33,12 @@ int	main(void) {
 		commander.attack("Soldier");
 		commander.clapTrapStat();
 	}
-	commander.guardGate();
+	commander.highFivesGuys();
+	commander.whoAmI();
 	// soldier.takeDamage(20);
 	// soldier.clapTrapStat();
 	// soldier.takeDamage(20);
 	// soldier.clapTrapStat();
 	return 0;
 }
+

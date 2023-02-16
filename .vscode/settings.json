@@ -51,6 +51,7 @@
 		"ratio": "cpp",
 		"tuple": "cpp",
 		"variant": "cpp",
-		"numbers": "cpp"
+		"numbers": "cpp",
+		"fstream": "cpp"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:55:03 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/14 19:33:13 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:16:43 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class ClapTrap
 {
-	protected:
+	private:
 		std::string _name;
 		int			_hit_pts;//represent the health of the ClapTrap
 		int			_energy_pts;

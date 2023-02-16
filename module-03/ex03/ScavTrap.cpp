@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:42:37 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/14 20:57:54 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:23:18 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap() {
 	std::cout << "ScavTrap default contructor called!" << std::endl;
+	this->_energy_pts = 50;
 }
 
 ScavTrap::ScavTrap(ScavTrap const& src) : ClapTrap(src) {
