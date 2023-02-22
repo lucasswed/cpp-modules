@@ -6,14 +6,14 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:05:07 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/17 16:16:10 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:53:02 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 #include <iostream>
 
-WrongAnimal::WrongAnimal(void) : _type("WrongAnimal") {
+WrongAnimal::WrongAnimal(void) {
 	std::cout << "WrongAnimal constructor called!" << std::endl;
 }
 

@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 18:12:55 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/17 16:05:49 by lucas-ma         ###   ########.fr       */
+/*   Created: 2023/02/16 16:54:46 by lucas-ma          #+#    #+#             */
+/*   Updated: 2023/02/22 16:44:37 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
-# include "WrongAnimal.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class WrongCat : public WrongAnimal
+class Dog : public Animal
 {
+	private:
+		Brain	*brain;
 	public:
-		WrongCat(void);
-		WrongCat(WrongCat const& src);
-		~WrongCat(void);
-		WrongCat&	operator=(WrongCat const& rhs);
+		Dog(void);
+		Dog(Dog const& src);
+		~Dog(void);
+		Dog&	operator=(Dog const& rhs);
 
 		virtual void	makeSound(void) const;
-		virtual std::string	get_type(void) const;
+		virtual std::string get_type(void) const;
+		std::string&		get_idea(int index) const;
+		void				set_idea(int index, std::string const& new_thought);
 };
 
 #endif

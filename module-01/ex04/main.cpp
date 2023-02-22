@@ -49,8 +49,8 @@ int create_replacing_file(std::ifstream& my_file, char **av)
 	str1 = av[2];
 	str2 = av[3];
 	name_rp_file = av[1];
-	name_rp_file += std::string(".replace");
-	replace_file.open(name_rp_file);
+	name_rp_file += ".replace";
+	replace_file.open(name_rp_file.c_str());
 	if (replace_file.is_open())
 		fill_replace_file(my_file, replace_file, str1, str2);
 	else
