@@ -13,27 +13,30 @@
 #include <iostream>
 #include "Point.hpp"
 
-bool bsp(Point const a, Point const b, Point const c, Point const point);
+bool bsp(Point const& a, Point const& b, Point const& c, Point const& point);
 
 int	main(void) {
-
-	Point	a(0.0, 0.0);
-	Point	b(2.0, 0.0);
-	Point	c(1.0, 2.0);
+	Point	a(0.0f, 0.0f);
+	Point	b(4.0f, 0.0f);
+	Point	c(2.0f, 3.0f);
 	Point	point(1.0f, 1.0f);
 
 	if (bsp(a, b, c, point) == true)
 		std::cout << "The point belongs to the triangle" << std::endl;
 	else
 		std::cout << "The point is OUT!" << std::endl;
-	Point	d(4.2f, 2.25f);
-	d = point;
+	Point	d(2.0f, 1.0f);
 	if (bsp(a, b, c, d) == true)
 		std::cout << "The point belongs to the triangle" << std::endl;
 	else
 		std::cout << "The point is OUT!" << std::endl;
-	Point	newPoint(-157.5f, -200.5f);
+	Point	newPoint(0.0f, 2.0f);
 	if (bsp(a, b, c, newPoint) == true)
+		std::cout << "The point belongs to the triangle" << std::endl;
+	else
+		std::cout << "The point is OUT!" << std::endl;
+	Point	nPoint(5.0f, 2.0f);
+	if (bsp(a, b, c, nPoint) == true)
 		std::cout << "The point belongs to the triangle" << std::endl;
 	else
 		std::cout << "The point is OUT!" << std::endl;

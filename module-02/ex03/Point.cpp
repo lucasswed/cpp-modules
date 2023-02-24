@@ -37,6 +37,5 @@ Fixed	Point::get_y(void) const {
 
 Point&	Point::operator=(Point const& rhs) {
 	(void)rhs;
-	std::cerr << "Cannot assign to const values, object keeps original values." << std::endl;
 	return (*this);
 }

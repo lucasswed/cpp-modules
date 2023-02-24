@@ -40,19 +40,10 @@ int	main(int ac, char **av) {
 	{
 		case 0:
 			harl.complain(harl.init[lev].name);
-			harl.complain(harl.init[++lev].name);
-			harl.complain(harl.init[++lev].name);
-			harl.complain(harl.init[++lev].name);
-			break;
 		case 1:
 			harl.complain(harl.init[lev].name);
-			harl.complain(harl.init[++lev].name);
-			harl.complain(harl.init[++lev].name);
-			break;
 		case 2:
 			harl.complain(harl.init[lev].name);
-			harl.complain(harl.init[++lev].name);
-			break;
 		case 3:
 			harl.complain(harl.init[lev].name);
 			break;

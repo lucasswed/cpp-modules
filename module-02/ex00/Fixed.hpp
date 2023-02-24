@@ -24,7 +24,7 @@ class Fixed {
 		~Fixed(void); //Canonical Form
 		
 		Fixed&	operator=(Fixed const& rhs); //Canonical Form
-		int		getRawBits(void) const;
+		int	const&	getRawBits(void) const;
 		void	setRawBits(int const raw);
 };
 
