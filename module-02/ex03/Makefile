@@ -42,9 +42,9 @@ CFLAGS	=		-Wall -Werror -Wextra -std=c++98#-g -fsanitize=address
 #valgrind --leak-check=full --show-leak-kinds=all ./minishell
 SRCS    =        main.cpp Fixed.cpp Point.cpp bsp.cpp
 
-OBJS    =        $(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
-DEPS    =        
-LIBS    =        
+OBJS	=		$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
+DEPS	=
+LIBS	=
 
 ################ RULES ##################
 

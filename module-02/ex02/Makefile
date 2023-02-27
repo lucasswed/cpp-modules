@@ -30,28 +30,27 @@ CPY        =        cp
 
 ################# DIRS ##################
 
-_SRC    =        src/
-_OBJ 	=		 obj/
-_LIB    =        libs/
-_MLX    =        ./mlx/
-_BIN    =        ./
+_SRC	=
+_OBJ	=		obj/
+_LIB	=		libs/
+_BIN	=		./
 
 ############### COMPILER ################
 
-CC      =        c++
-CFLAGS      =        -Wall -Werror -Wextra -std=c++98#-g -fsanitize=address
+CC		=		c++
+CFLAGS	=		-Wall -Werror -Wextra -std=c++98#-g -fsanitize=address
 #valgrind --leak-check=full --show-leak-kinds=all ./minishell
-SRCS    =        main.cpp Fixed.cpp
+SRCS	=		main.cpp Fixed.cpp
 
-OBJS    =        $(patsubst $(_SRC)%.c,$(_OBJ)%.o,$(SRCS))
-DEPS    =        
-LIBS    =        
+OBJS	=        $(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
+DEPS	=
+LIBS	=
 
 ################ RULES ##################
 
 all: $(NAME)
 
-$(_OBJ)%.o: $(_SRC)%.c
+$(_OBJ)%.o: $(_SRC)%.cpp
 	$(MKD) -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
