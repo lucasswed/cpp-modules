@@ -16,27 +16,30 @@
 bool bsp(Point const& a, Point const& b, Point const& c, Point const& point);
 
 int	main(void) {
-	Point	a(0.0f, 0.0f);
-	Point	b(4.0f, 0.0f);
-	Point	c(2.0f, 3.0f);
-	Point	point(1.0f, 1.0f);
+
+	Point	a(1, 1);
+	Point	b(1, 5);
+	Point	c(5, 3);
+	Point	point(2.0f, 2.0f); //belong
 
 	if (bsp(a, b, c, point) == true)
 		std::cout << "The point belongs to the triangle" << std::endl;
 	else
 		std::cout << "The point is OUT!" << std::endl;
-	Point	d(2.0f, 1.0f);
+	Point	mpoint(3.0f, 2.0f); //dont belong, its part of the line
+
+	if (bsp(a, b, c, mpoint) == true)
+		std::cout << "The point belongs to the triangle" << std::endl;
+	else
+		std::cout << "The point is OUT!" << std::endl;
+	Point	d(3.0f, 3.0f); //belong
+	d = point;
 	if (bsp(a, b, c, d) == true)
 		std::cout << "The point belongs to the triangle" << std::endl;
 	else
 		std::cout << "The point is OUT!" << std::endl;
-	Point	newPoint(0.0f, 2.0f);
+	Point	newPoint(-157.5f, -200.5f); //dont belong
 	if (bsp(a, b, c, newPoint) == true)
-		std::cout << "The point belongs to the triangle" << std::endl;
-	else
-		std::cout << "The point is OUT!" << std::endl;
-	Point	nPoint(5.0f, 2.0f);
-	if (bsp(a, b, c, nPoint) == true)
 		std::cout << "The point belongs to the triangle" << std::endl;
 	else
 		std::cout << "The point is OUT!" << std::endl;
