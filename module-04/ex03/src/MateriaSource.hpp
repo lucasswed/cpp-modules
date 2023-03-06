@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 14:57:55 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/03 18:04:09 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:13:36 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class MateriaSource : public IMateriaSource
 		MateriaSource(void);
 		~MateriaSource(void);
 
-		virtual void	learnMateria(AMateria *m);
-		virtual AMateria*	createMateria(std::string const& type);
+		void	learnMateria(AMateria *m);
+		AMateria*	createMateria(std::string const& type);
 };
 
 #endif

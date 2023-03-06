@@ -6,11 +6,12 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:12:48 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/22 18:21:35 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:34:56 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 #include <iostream>
 
 Ice::Ice(void) : AMateria("ice") {

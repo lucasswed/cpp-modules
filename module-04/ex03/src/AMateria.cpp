@@ -6,11 +6,12 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:31:54 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/22 17:56:46 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:32:41 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria(void) {
 }

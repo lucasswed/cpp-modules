@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 14:10:34 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/03 14:54:19 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:38:33 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Character::~Character(void) {
 		if (this->inventory[i])
 			delete inventory[i];
 	}
-	delete [] inventory;
 }
 
 Character&	Character::operator=(Character const& rhs) {
@@ -66,7 +65,7 @@ void	Character::unequip(int idx) {
 		return ;
 	else
 		if (this->inventory[idx] != NULL)
-			this->inventory[idx] == NULL;
+			this->inventory[idx] = NULL;
 }
 
 void	Character::use(int idx, ICharacter& target) {
