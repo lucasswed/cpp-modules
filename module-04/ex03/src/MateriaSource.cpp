@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 18:05:49 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/06 12:35:15 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:53:08 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ MateriaSource::MateriaSource(void) : IMateriaSource() {
 }
 
 MateriaSource::~MateriaSource(void) {
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (this->learned_materias[i])
+			delete this->learned_materias[i];
+	}
 }
 
 void	MateriaSource::learnMateria(AMateria *m) {
