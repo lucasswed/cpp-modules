@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:34:19 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/10 18:02:00 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:12:38 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ class Form
 		class GradeTooLowException : std::exception
 		{
 			public:
-				const char* what(std::string const& msg) const throw();
+				virtual const char* what() const throw();
 		};
 		class GradeTooHighException : std::exception
 		{
 			public:
-				const char* what() const throw();
+				virtual const char* what() const throw();
 		};
 };
 

@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:14:28 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/10 18:11:49 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:13:47 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main(void) {
 		std::cout << dario << std::endl;
 		std::cout << rafa << std::endl;
 		std::cout << b53 << std::endl;
+
+		b53.be_signed(rafa); // esta a dar segfault "terminate called after throwing an instance of 'Form::GradeTooLowException'"
 	}
 	catch(std::exception& e)
 	{

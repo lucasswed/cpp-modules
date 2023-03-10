@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:42:52 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/10 18:01:46 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:09:13 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define BUREAUCRAT_HPP
 # include <string>
 # include <iostream>
-#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
