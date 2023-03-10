@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:29:20 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/10 17:00:10 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:01:32 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,18 @@ void				Bureaucrat::decrement_grade(void) {
 		this->_grade++;
 }
 
-void				Bureaucrat::sign_form(Form const& form) {
+void				Bureaucrat::sign_form(Form const& form) const {
+	std::string reason;
 	if (form.get_is_signed() == true)
-		std::cout << this->_name << " coudn't sign " << form.get_name() << " because its already signed!" << std::endl;
+		reason = " because its already signed!";
 	else if (this->_grade >= form.get_req_grade_to_sign())
-		std::cout << this->_name << " coudn't sign " << form.get_name() << " because his grade its too low!" << std::endl;
-	else
+		reason = " because his grade its too low!";
+	else if (reason.empty())
+	{
 		std::cout << this->_name << " sign " << form.get_name() << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " coudn't sign " << form.get_name() << reason << std::endl;
 }
 
 std::ostream&	operator<<(std::ostream& o, Bureaucrat const& src) {
