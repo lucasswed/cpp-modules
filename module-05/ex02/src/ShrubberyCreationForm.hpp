@@ -20,12 +20,18 @@ class ShrubberyCreationForm : public AForm
 		std::string	_target;
 		ShrubberyCreationForm(void);
 	public:
-		ShrubberyCreationForm(Bureaucrat const& target);
+		ShrubberyCreationForm(std::string const& target);
 		ShrubberyCreationForm(ShrubberyCreationForm const& src);
 		~ShrubberyCreationForm(void);
 		ShrubberyCreationForm&	operator=(ShrubberyCreationForm const& rhs);
+		
+		virtual void	execute(Bureaucrat const& executor) const;
+		class ShrubberyFileException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 
-		virtual void	execute(Bureaucrat const& executor);
 };
 
 #endif
