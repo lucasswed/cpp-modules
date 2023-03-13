@@ -6,12 +6,12 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:29:20 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/11 17:04:37 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:07:40 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(void) {
 }
@@ -64,7 +64,7 @@ void				Bureaucrat::decrement_grade(void) {
 		this->_grade++;
 }
 
-void				Bureaucrat::sign_form(Form const& form) const {
+void				Bureaucrat::sign_form(AForm const& form) const {
 	if (form.get_is_signed() == true || this->_grade >= form.get_req_grade_to_sign())
 		std::cout << *this << " coudn't sign " << form.get_name() << (form.get_is_signed() ? " because its already signed!" : " because his grade its too low!") << std::endl;
 	else

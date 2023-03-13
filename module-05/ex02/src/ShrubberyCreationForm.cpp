@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShubberyCreationForm.cpp                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:52:31 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/13 17:04:40 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:25:43 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 #include <fstream>
-#include <random>
+#include <cstdlib>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 145, 137) {
 }
@@ -40,33 +40,29 @@ void		ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
 	std::string file_name = this->_target + "_shrubbery";
 	int	option = std::rand() % 4;
 
-	output_file = std::ofstream(file_name.c_str());
-	
+	(void)executor;
+	output_file.open(file_name);
+	file_name.clear();
 	if (!output_file.is_open())
 		throw ShrubberyFileException();
 	switch (option)
 	{
 		case 0:
-			input_file = std::ifstream("tree.txt");
-			if (!input_file.is_open())
-				throw ShrubberyFileException();
+			file_name = "tree.txt";
 			break;
 		case 1:
-			input_file = std::ifstream("tree1.txt");
-			if (!input_file.is_open())
-				throw ShrubberyFileException();
+			file_name = "tree1.txt";
 			break;
 		case 2:
-			input_file = std::ifstream("tree2.txt");
-			if (!input_file.is_open())
-				throw ShrubberyFileException();
+			file_name = "tree2.txt";
 			break;
 		default :
-			input_file = std::ifstream("tree3.txt");
-			if (!input_file.is_open())
-				throw ShrubberyFileException();
+			file_name = "tree3.txt";
 			break;
 	}
+	input_file.open(file_name);
+	if (!input_file.is_open())
+		throw ShrubberyFileException();
 	std::getline(std::cin, temp, '\0');
 	output_file.write(temp.c_str(), temp.length());
 }

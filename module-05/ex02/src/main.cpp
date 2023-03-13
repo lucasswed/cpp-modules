@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:14:28 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/13 17:05:00 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:15:10 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main(void) {
 		ShrubberyCreationForm lucas("lucas");
 
 		std::cout << lucas << std::endl;
+		lucas.execute(dario);
 	}
 	catch(std::exception& e)
 	{

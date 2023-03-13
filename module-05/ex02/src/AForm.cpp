@@ -75,7 +75,7 @@ void				AForm::be_signed(Bureaucrat const& bureaucrat) {
 }
 
 std::ostream&	operator<<(std::ostream& o, AForm const& src) {
-	o << src.get_name() << ", Aform with required grade to sign " << src.get_req_grade_to_sign() << " and required grade to execute ";
+	o << src.get_name() << ", form with required grade to sign " << src.get_req_grade_to_sign() << " and required grade to execute ";
 	if (src.get_is_signed())
 		o << src.get_req_grade_to_exec() << " is signed!";
 	else
