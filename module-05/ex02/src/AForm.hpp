@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AAForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:34:19 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/11 17:19:00 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/11 19:32:30 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 # include <string>
 # include <iostream>
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
-		Form(void);
+		AForm(void);
 		std::string const _name;
 		bool			  _is_signed; //at construction it's not
 		size_t		const _req_grade_to_sign;
 		size_t		const _req_grade_to_exec;
 	public:
-		Form(Form const& src);
-		Form(std::string const& name, int to_sign, int to_exec);
-		~Form(void);
-		Form&	operator=(Form const& rhs);
+		AForm(AForm const& src);
+		AForm(std::string const& name, int to_sign, int to_exec);
+		virtual ~AForm(void);
+		AForm&	operator=(AForm const& rhs);
 
 		std::string const&	get_name(void) const;
 		bool				get_is_signed(void) const;
+		void				set_is_signed(bool const& is_signed);
 		size_t const&		get_req_grade_to_sign(void) const;
 		size_t const&		get_req_grade_to_exec(void) const;
 		void				be_signed(Bureaucrat const& bureaucrat);
+		virtual void				execute(Bureaucrat const& executor) const = 0;
 		class GradeTooLowException : public std::exception
 		{
 			public:
@@ -48,6 +50,6 @@ class Form
 		};
 };
 
-std::ostream&	operator<<(std::ostream& o, Form const& src);
+std::ostream&	operator<<(std::ostream& o, AForm const& src);
 
 #endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(void) : _req_grade_to_sign(0), _req_grade_to_exec(0) {
+AForm::AForm(void) : _req_grade_to_sign(0), _req_grade_to_exec(0) {
 }
 
-Form::Form(Form const& src) : _name(src._name),  _req_grade_to_sign(src._req_grade_to_sign), _req_grade_to_exec(src._req_grade_to_exec) {
+AForm::AForm(AForm const& src) : _name(src._name),  _req_grade_to_sign(src._req_grade_to_sign), _req_grade_to_exec(src._req_grade_to_exec) {
 	*this = src;
 }
 
-Form::Form(std::string const& name, int to_sign, int to_exec) : _name(name), _req_grade_to_sign(to_sign), _req_grade_to_exec(to_exec) {
+AForm::AForm(std::string const& name, int to_sign, int to_exec) : _name(name), _req_grade_to_sign(to_sign), _req_grade_to_exec(to_exec) {
 	if (to_sign > 150 || to_exec > 150)
 		throw GradeTooLowException();
 	else if (to_sign <= 0 || to_exec <= 0)
@@ -28,31 +28,35 @@ Form::Form(std::string const& name, int to_sign, int to_exec) : _name(name), _re
 	_is_signed = false;
 }
 
-Form::~Form(void) {
+AForm::~AForm(void) {
 }
 
-Form&	Form::operator=(Form const& rhs) {
+AForm&	AForm::operator=(AForm const& rhs) {
 	this->_is_signed = rhs._is_signed;
 	return (*this);
 }
 
-std::string const&	Form::get_name(void) const {
+std::string const&	AForm::get_name(void) const {
 	return (this->_name);
 }
 
-bool				Form::get_is_signed(void) const {
+bool				AForm::get_is_signed(void) const {
 	return (this->_is_signed);
 }
 
-size_t const&		Form::get_req_grade_to_sign(void) const {
+void				AForm::set_is_signed(bool const& is_signed) {
+	this->_is_signed = is_signed;
+}
+
+size_t const&		AForm::get_req_grade_to_sign(void) const {
 	return (this->_req_grade_to_sign);
 }
 
-size_t const&		Form::get_req_grade_to_exec(void) const {
+size_t const&		AForm::get_req_grade_to_exec(void) const {
 	return (this->_req_grade_to_exec);
 }
 
-void				Form::be_signed(Bureaucrat const& bureaucrat) {
+void				AForm::be_signed(Bureaucrat const& bureaucrat) {
 	if (this->_is_signed == false)
 	{
 		if (bureaucrat.get_grade() >= this->_req_grade_to_sign)
@@ -70,8 +74,8 @@ void				Form::be_signed(Bureaucrat const& bureaucrat) {
 		bureaucrat.sign_form(*this);
 }
 
-std::ostream&	operator<<(std::ostream& o, Form const& src) {
-	o << src.get_name() << ", form with required grade to sign " << src.get_req_grade_to_sign() << " and required grade to execute ";
+std::ostream&	operator<<(std::ostream& o, AForm const& src) {
+	o << src.get_name() << ", Aform with required grade to sign " << src.get_req_grade_to_sign() << " and required grade to execute ";
 	if (src.get_is_signed())
 		o << src.get_req_grade_to_exec() << " is signed!";
 	else
@@ -79,10 +83,10 @@ std::ostream&	operator<<(std::ostream& o, Form const& src) {
 	return (o);
 }
 
-const char* Form::GradeTooLowException::what() const throw() {
+const char* AForm::GradeTooLowException::what() const throw() {
 		return ("Grade too low exception!");
 }
 
-const char* Form::GradeTooHighException::what() const throw() {
+const char* AForm::GradeTooHighException::what() const throw() {
 	return ("Grade too high exceprtion!");
 }
