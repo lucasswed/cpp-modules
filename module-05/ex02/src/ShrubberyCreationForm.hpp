@@ -22,16 +22,27 @@ class ShrubberyCreationForm : public AForm
 	public:
 		ShrubberyCreationForm(std::string const& target);
 		ShrubberyCreationForm(ShrubberyCreationForm const& src);
-		~ShrubberyCreationForm(void);
+		virtual ~ShrubberyCreationForm(void);
 		ShrubberyCreationForm&	operator=(ShrubberyCreationForm const& rhs);
 		
-		virtual void	execute(Bureaucrat const& executor) const;
+		virtual std::string		get_target(void) const;
+		virtual void			set_target(std::string const& new_target);
+		virtual void			execute(Bureaucrat const& executor) const;
 		class ShrubberyFileException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
 		};
-
+		class ShrubberyBureaucratGradeException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class ShrubberyFormNotSignException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 #endif

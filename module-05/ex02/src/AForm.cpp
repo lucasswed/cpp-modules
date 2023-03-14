@@ -32,7 +32,8 @@ AForm::~AForm(void) {
 }
 
 AForm&	AForm::operator=(AForm const& rhs) {
-	this->_is_signed = rhs._is_signed;
+	if (this != &rhs)
+		this->_is_signed = rhs._is_signed;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 #    By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 15:07:52 by lucas-ma          #+#    #+#              #
-#    Updated: 2023/03/13 17:05:32 by lucas-ma         ###   ########.fr        #
+#    Updated: 2023/03/14 17:07:14 by lucas-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,9 @@ _BIN	=	./
 ############### COMPILER ################
 
 CC		=	c++
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address#-Wshadow -Wno-shadow
+CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g #-fsanitize=address -Wshadow -Wno-shadow
 #valgrind --leak-check=full --show-leak-kinds=all ./
-SRCS	=	$(_SRC)main.cpp $(_SRC)Bureaucrat.cpp $(_SRC)AForm.cpp $(_SRC)ShrubberyCreationForm.cpp
+SRCS	=	$(_SRC)main.cpp $(_SRC)Bureaucrat.cpp $(_SRC)AForm.cpp $(_SRC)ShrubberyCreationForm.cpp $(_SRC)RobotomyRequestForm.cpp $(_SRC)PresidentialPardonForm.cpp
 OBJS	=	$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
 DEPS	=
 LIBS	=

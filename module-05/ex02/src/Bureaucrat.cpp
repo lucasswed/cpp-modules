@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:29:20 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/13 17:07:40 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:37:54 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ Bureaucrat::Bureaucrat(void) {
 
 Bureaucrat::Bureaucrat(std::string const& name, int const& grade) : _name(name) {
 	if (grade < 1)
-		// throw GradeTooHighException();
-		return ;
+		throw GradeTooHighException();
 	else if (grade > 150)
-		// throw GradeTooLowException();
-		return ;
+		throw GradeTooLowException();
 	else
 		this->_grade = grade;
 }
@@ -50,16 +48,14 @@ size_t				Bureaucrat::get_grade(void) const {
 
 void				Bureaucrat::increment_grade(void) {
 	if (this->_grade - 1 < 1)
-		// throw GradeTooHighException();
-		return ;
+		throw GradeTooHighException();
 	else
 		this->_grade--;
 }
 
 void				Bureaucrat::decrement_grade(void) {
 	if (this->_grade + 1 > 150)
-		// throw GradeTooLowException();
-		return ;
+		throw GradeTooLowException();
 	else
 		this->_grade++;
 }
@@ -69,6 +65,19 @@ void				Bureaucrat::sign_form(AForm const& form) const {
 		std::cout << *this << " coudn't sign " << form.get_name() << (form.get_is_signed() ? " because its already signed!" : " because his grade its too low!") << std::endl;
 	else
 		std::cout << *this << " sign " << form.get_name() << std::endl;
+}
+
+void				Bureaucrat::execute_form(AForm const& form) {
+	try
+	{
+		form.execute(*this);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " executed " << form.get_name() << std::endl;
 }
 
 std::ostream&	operator<<(std::ostream& o, Bureaucrat const& src) {

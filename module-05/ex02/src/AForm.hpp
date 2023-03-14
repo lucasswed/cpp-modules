@@ -31,12 +31,14 @@ class AForm
 		virtual ~AForm(void);
 		AForm&	operator=(AForm const& rhs);
 
-		std::string const&	get_name(void) const;
-		bool				get_is_signed(void) const;
-		void				set_is_signed(bool const& is_signed);
-		size_t const&		get_req_grade_to_sign(void) const;
-		size_t const&		get_req_grade_to_exec(void) const;
-		void				be_signed(Bureaucrat const& bureaucrat);
+		std::string const&			get_name(void) const;
+		bool						get_is_signed(void) const;
+		void						set_is_signed(bool const& is_signed);
+		size_t const&				get_req_grade_to_sign(void) const;
+		size_t const&				get_req_grade_to_exec(void) const;
+		void						be_signed(Bureaucrat const& bureaucrat);
+		virtual std::string			get_target(void) const = 0;
+		virtual void				set_target(std::string const& target) = 0;
 		virtual void				execute(Bureaucrat const& executor) const = 0;
 		class GradeTooLowException : public std::exception
 		{

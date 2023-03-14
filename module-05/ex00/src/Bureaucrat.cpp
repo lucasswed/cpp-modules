@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:29:20 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/07 16:41:15 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:27:59 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,9 @@ Bureaucrat::Bureaucrat(void) {
 
 Bureaucrat::Bureaucrat(std::string const& name, int const& grade) : _name(name) {
 	if (grade < 1)
-	{
 		throw GradeTooHighException();
-		
-	}
 	else if (grade > 150)
-	{
 		throw GradeTooLowException();
-	}
 	else
 		this->_grade = grade;
 }

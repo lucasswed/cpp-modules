@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:42:52 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/13 17:08:20 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:28:58 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Bureaucrat
 		void				increment_grade(void);
 		void				decrement_grade(void);
 		void				sign_form(AForm const& form) const;
+		void				execute_form(AForm const& form);
 
 		class GradeTooHighException : public std::exception
 		{
