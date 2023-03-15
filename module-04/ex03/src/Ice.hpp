@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:06:36 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/06 12:13:24 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:20:14 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Ice : public AMateria
 	public:
 		Ice(void);
 		Ice(Ice const& src);
-		~Ice(void);
+		virtual ~Ice(void);
 
 		AMateria* clone(void) const;
 		void	  use(ICharacter& target);
