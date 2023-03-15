@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:37:24 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/22 16:20:30 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/15 15:05:13 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fstream>
 
 Brain::Brain(void) {
-	// std::cout << "Brain default constructor called!" << std::endl;
+	std::cout << "Brain default constructor called!" << std::endl;
 	std::ifstream file("thougths.txt");
 	
 	if (file.is_open())
@@ -25,12 +25,12 @@ Brain::Brain(void) {
 }
 
 Brain::Brain(Brain const& src) {
-	// std::cout << "Brain copy constructor called!" << std::endl;
+	std::cout << "Brain copy constructor called!" << std::endl;
 	*this = src;
 }
 
 Brain::~Brain(void) {
-	// std::cout << "Brain destructor called!" << std::endl;
+	std::cout << "Brain destructor called!" << std::endl;
 }
 
 Brain&	Brain::operator=(Brain const& rhs) {

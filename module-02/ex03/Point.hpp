@@ -19,13 +19,13 @@ class Point
 	private:
 		Fixed const	x;
 		Fixed const	y;
+		Point&	operator=(Point const& rhs);
+		Point(void);
 
 	public:
-		Point(void);
 		Point(Point const& src);
 		Point(float const& x, float const& y);
 		~Point(void);
-		Point&	operator=(Point const& rhs);
 		Fixed	get_x(void) const;
 		Fixed	get_y(void) const;
 };

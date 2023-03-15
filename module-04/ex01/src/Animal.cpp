@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:50:16 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/22 14:28:30 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/15 15:14:24 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 #include <iostream>
 
 Animal::Animal(void) {
-	// std::cout << "Animal constructor called!" << std::endl;
+	std::cout << "Animal constructor called!" << std::endl;
 }
 
 Animal::Animal(Animal const& src) {
-	// std::cout << "Animal copy constructor called!" << std::endl;
+	std::cout << "Animal copy constructor called!" << std::endl;
 	*this = src;
 }
 
 Animal::~Animal(void) {
-	// std::cout << "Animal destructor called!" << std::endl;
+	std::cout << "Animal destructor called!" << std::endl;
 }
 
 Animal&	Animal::operator=(Animal const& rhs) {

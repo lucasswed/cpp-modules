@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:34:19 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/11 17:19:00 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:07:49 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Form
 		size_t const&		get_req_grade_to_sign(void) const;
 		size_t const&		get_req_grade_to_exec(void) const;
 		void				be_signed(Bureaucrat const& bureaucrat);
-		class GradeTooLowException : public std::exception
+		class GradeTooLowException :   public std::exception
 		{
 			public:
 				virtual const char* what() const throw();

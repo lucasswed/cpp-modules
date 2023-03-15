@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:18:10 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/14 16:12:49 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:33:52 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class RobotomyRequestForm : public AForm
 {
 	private:
 		std::string	_target;
-		int			_chance;
 		RobotomyRequestForm(void);
 	public:
 		RobotomyRequestForm(std::string const& target);

@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 11:36:56 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/15 15:17:33 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:41:45 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(void) {
 	
 	ICharacter* bob = new Character("bob");
 	ICharacter* charles = new Character(*(Character*)me);
-	std::cout << "slot 0" << std::endl;
+	std::cout << std::endl << "slot 0" << std::endl;
 	charles->use(0, *bob);
 	std::cout << "slot 1" << std::endl;
 	charles->use(1, *bob);
@@ -58,6 +58,7 @@ int	main(void) {
 	charles->use(3, *bob);
 	std::cout << "slot 4?" << std::endl;
 	charles->use(4, *bob);
+	std::cout << std::endl;
 
 	delete bob;
 	delete charles;

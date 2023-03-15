@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:12:55 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/17 16:05:49 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:46:33 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class WrongCat : public WrongAnimal
 		~WrongCat(void);
 		WrongCat&	operator=(WrongCat const& rhs);
 
-		virtual void	makeSound(void) const;
-		virtual std::string	get_type(void) const;
+		void	makeSound(void) const;
 };
 
 #endif

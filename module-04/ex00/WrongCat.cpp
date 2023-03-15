@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:15:22 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/17 16:05:57 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:52:07 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,4 @@ WrongCat&	WrongCat::operator=(WrongCat const& rhs) {
 
 void	WrongCat::makeSound(void) const {
 	std::cout << "BZZZZZZZZ!" << std::endl;
-}
-
-std::string	WrongCat::get_type(void) const {
-	return (this->_type);
 }

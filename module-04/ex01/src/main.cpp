@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:24:42 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/02/22 16:29:36 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/15 15:04:20 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	main(void)
 		((Cat*)farm[0])->set_idea(0, "WOLOLOLO I'm a cat!");
 
 		std::cout << ((Cat*)farm[0])->get_idea(0) << std::endl;
-
 		std::cout << ((Cat*)testCat)->get_idea(0) << std::endl;
 
 		delete testCat;
@@ -49,7 +48,6 @@ int	main(void)
 		((Dog*)farm[9])->set_idea(10, "WEEEEEE I'm a dog!");
 
 		std::cout << ((Dog*)farm[9])->get_idea(10) << std::endl;
-
 		std::cout << ((Dog*)testDog)->get_idea(10) << std::endl;
 
 		delete testDog;
