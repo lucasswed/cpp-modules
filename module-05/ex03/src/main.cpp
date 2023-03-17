@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:14:28 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/14 17:42:07 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/17 15:15:08 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,42 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void) {
 	try
 	{
-		Bureaucrat dario("dario", 1);
-		Bureaucrat rafa("rafa", 140);
-		ShrubberyCreationForm max("max");
-		RobotomyRequestForm junior("junior");
-		PresidentialPardonForm mike("mike");
-		
-
-		std::cout << max << std::endl;
-		max.be_signed(rafa);
-		rafa.execute_form(max);
-		// max.execute(rafa);
-		// std::cout << max.get_target() << std::endl;
-		// max.set_target("black");
-		// std::cout << max.get_target() << std::endl;
-		// max.execute(dario);
-		// junior.be_signed(dario);
-		// junior.execute(dario);
-		// mike.be_signed(rafa);
-		// mike.execute(dario);
+		Bureaucrat steve("Steve", 2);
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		if (rrf != NULL)
+		{
+			rrf->be_signed(steve);
+			steve.execute_form(*rrf);
+			delete rrf;
+		}
+		rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
+		if (rrf != NULL)
+		{
+			rrf->be_signed(steve);
+			steve.execute_form(*rrf);
+			delete rrf;
+		}
+		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+		if (rrf != NULL)
+		{
+			rrf->be_signed(steve);
+			steve.execute_form(*rrf);
+			delete rrf;
+		}
+		rrf = someRandomIntern.makeForm("Wrong file", "Bender");
+		if (rrf != NULL)
+		{
+			rrf->be_signed(steve);
+			steve.execute_form(*rrf);
+			delete rrf;
+		}
 	}
 	catch(std::exception& e)
 	{
