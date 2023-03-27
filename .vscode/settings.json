@@ -35,6 +35,7 @@
 		"optional": "cpp",
 		"tuple": "cpp",
 		"utility": "cpp",
-		"numbers": "cpp"
+		"numbers": "cpp",
+		"sstream": "cpp"
 	}
 }

@@ -6,7 +6,7 @@
 #    By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 15:07:52 by lucas-ma          #+#    #+#              #
-#    Updated: 2023/03/24 16:29:40 by lucas-ma         ###   ########.fr        #
+#    Updated: 2023/03/27 16:42:28 by lucas-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ _BIN	=	./
 CC		=	c++
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g #-fsanitize=address -Wshadow -Wno-shadow
 #valgrind --leak-check=full --show-leak-kinds=all ./
-SRCS	=	$(_SRC)main.cpp $(_SRC)ScalarConverter.cpp
+SRCS	=	$(_SRC)main.cpp $(_SRC)ScalarConverter.cpp $(_SRC)char_convert.cpp $(_SRC)int_convert.cpp $(_SRC)float_convert.cpp $(_SRC)find_scalar_type.cpp
+OBJS	=	$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
 DEPS	=
 LIBS	=
 

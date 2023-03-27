@@ -8,7 +8,7 @@
 			"name": "(gdb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/module-04/ex03/poly",
+			"program": "${workspaceFolder}/module-06/ex00/convert",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",

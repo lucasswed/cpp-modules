@@ -6,11 +6,12 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:06:09 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/24 16:34:02 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/27 16:44:52 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include "convertions.hpp"
 #include <iostream>
 
 ScalarConverter::ScalarConverter(void) {
@@ -28,10 +29,26 @@ ScalarConverter&	ScalarConverter::operator=(ScalarConverter const& rhs) {
 	return (*this);
 }
 
-void		ScalarConverter::converter(std::string const& to_convert) {
-	int	c;
+void		ScalarConverter::converter(std::string const& input) {
+	int scalar_type;
 
-	if (isdigit(to_convert[0]))
-		c = std::stoi(to_convert);
-	std::cout << c << std::endl;
+	scalar_type = find_scalar_type(input);
+	switch (scalar_type)
+	{
+		case character:
+			char_convert(input);
+			break;
+		case integer:
+			int_convert(input);
+			break;
+		case float_number:
+			float_convert(input);
+			break;
+		// case double_number:
+		// 	double_convert(input);
+		// 	break;
+	default:
+		std::cout << "Wrong usage! Converter just accept char/int/float/double!" << std::endl;
+		break;
+	}
 }
