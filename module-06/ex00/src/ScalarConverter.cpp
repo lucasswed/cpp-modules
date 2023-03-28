@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:06:09 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/27 16:44:52 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:56:45 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void		ScalarConverter::converter(std::string const& input) {
 		case float_number:
 			float_convert(input);
 			break;
-		// case double_number:
-		// 	double_convert(input);
-		// 	break;
+		case double_number:
+			double_convert(input);
+			break;
 	default:
 		std::cout << "Wrong usage! Converter just accept char/int/float/double!" << std::endl;
 		break;

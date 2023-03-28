@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:16:19 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/27 16:16:44 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/03/28 13:10:36 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <sstream>
 # include <string.h>
+# include <iomanip>
 
 enum {
 	character,
