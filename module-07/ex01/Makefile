@@ -6,13 +6,13 @@
 #    By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 15:07:52 by lucas-ma          #+#    #+#              #
-#    Updated: 2023/03/28 12:57:43 by lucas-ma         ###   ########.fr        #
+#    Updated: 2023/04/10 16:29:20 by lucas-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################ PROGRAM ################
 
-NAME	=	convert
+NAME	=	iter
 
 ################ TERMINAL ###############
 
@@ -40,8 +40,7 @@ _BIN	=	./
 CC		=	c++
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g #-fsanitize=address -Wshadow -Wno-shadow
 #valgrind --leak-check=full --show-leak-kinds=all ./
-SRCS	=	$(_SRC)main.cpp $(_SRC)ScalarConverter.cpp $(_SRC)char_convert.cpp $(_SRC)int_convert.cpp \
-			$(_SRC)float_convert.cpp $(_SRC)find_scalar_type.cpp $(_SRC)double_convert.cpp
+SRCS	=	$(_SRC)main.cpp
 OBJS	=	$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
 DEPS	=
 LIBS	=

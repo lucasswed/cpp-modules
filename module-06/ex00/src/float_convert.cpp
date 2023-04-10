@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:42:32 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/28 18:36:33 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:47:14 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	float_convert(std::string const& input) {
 	else
 		std::cout << "Non displayable" << std::endl;
 	std::cout << "int: ";
-	if (num < -2147483648 || num > 2147483647)
+	if (num < -2147483648.0 || num > 2147483647.0)
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << static_cast<int>(num) << std::endl;

@@ -6,16 +6,18 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 11:16:19 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/03/28 15:32:48 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:45:46 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONVERTIONS_HPP
 # define CONVERTIONS_HPP
+# include <string.h>
+# include <stdlib.h>
+# include <string.h>
 # include <string>
 # include <iostream>
 # include <sstream>
-# include <string.h>
 # include <iomanip>
 # include <limits>
 
