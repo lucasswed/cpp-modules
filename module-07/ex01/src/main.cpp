@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 15:39:37 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/04/14 13:40:45 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:50:13 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,10 @@ int	main(void) {
 			do {
 				std::getline(std::cin >> std::ws, temp);
 				for (size_t i = 0; i < temp.size(); i++)
-					if (!isdigit(temp[i]))
+					if (!isdigit(temp[i])) {
+						std::cout << "Please fill this campus with only numbers!" << std::endl;
 						temp.clear();
+						}
 			} while (temp.empty());
 			array[i].set_age(atoi(temp.c_str()));
 		}
