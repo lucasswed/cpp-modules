@@ -61,6 +61,13 @@
 		"memory": "cpp",
 		"mutex": "cpp",
 		"ratio": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"bit": "cpp",
+		"deque": "cpp",
+		"algorithm": "cpp",
+		"iterator": "cpp",
+		"memory_resource": "cpp",
+		"random": "cpp",
+		"ranges": "cpp"
 	}
 }
