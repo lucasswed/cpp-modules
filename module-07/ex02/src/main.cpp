@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 14:11:47 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/04/15 18:13:26 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/04/15 22:32:11 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int main(void) {
 			a[i] = Person();
 			a[i].set_name(names[i]);
 			a[i].set_job(jobs[i]);
-			a[i].set_age(i);
+			a[i].set_age(i + 20);
 		}
 		for (int i = 0; i < 3; ++i) {
 			printClass(a[i]);
