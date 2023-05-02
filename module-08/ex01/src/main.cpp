@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 16:08:43 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/02 09:41:17 by lucas-ma         ###   ########.fr       */
+/*   Created: 2023/05/02 11:39:51 by lucas-ma          #+#    #+#             */
+/*   Updated: 2023/05/02 15:52:42 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
-# include <algorithm>
-# include <exception>
+#include <iostream>
+#include "Span.hpp"
 
-template <typename T>
-typename T::iterator	easyfind(T & container, int const& int_to_find) {
-	typename T::iterator occurence = find(container.begin(), container.end(), int_to_find);
-	if (occurence != container.end())
-		return (occurence);
-	throw std::exception();
+int main(void) {
+	try {
+		Span a(5);
+
+		a.addNumber(6);
+		a.addNumber(3);
+		a.addNumber(17);
+		a.addNumber(9);
+		a.addNumber(11);
+
+		a.showContent();
+		std::cout << std::endl;
+
+		std::cout << a.shortestSpan() << std::endl;
+		std::cout << a.longestSpan() << std::endl;
+
+	}
+	catch(std::exception const& e)
+	{
+		std::cerr << e.what() << std::endl;
+	} 
 }
-
-#endif

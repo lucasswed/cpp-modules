@@ -68,6 +68,8 @@
 		"iterator": "cpp",
 		"memory_resource": "cpp",
 		"random": "cpp",
-		"ranges": "cpp"
+		"ranges": "cpp",
+		"list": "cpp",
+		"set": "cpp"
 	}
 }
