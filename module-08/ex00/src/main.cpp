@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:26:27 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/04/26 11:42:14 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:28:06 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,16 @@ int main(void) {
 
 		for (int i = 0; i < 5; i++)
 			vector_container.push_back(i);
-		if (easyfind(vector_container, 1) == vector_container.end())
-			std::cout << "found" << std::endl;
+		std::vector<int>::iterator pos = easyfind(vector_container, 1);
+		std::cout << "found: " << *pos << std::endl;
 
 		deque_container.assign(vector_container.begin(), vector_container.end());
-		if (easyfind(deque_container, 2) == deque_container.end())
-			std::cout << "Found" << std::endl;
+		std::deque<int>::iterator pos2 = easyfind(deque_container, 2);
+		std::cout << "Found: " << *pos2 << std::endl;
 
 		list_container.assign(vector_container.begin(), vector_container.end());
-		std::list<int>::iterator pos = easyfind(list_container, 3);
-		if (pos == list_container.end())
-			std::cout << "Found: " << *pos  << std::endl;
+		std::list<int>::iterator pos3 = easyfind(list_container, 3);
+		std::cout << "Found: " << *pos3  << std::endl;
 	}
 	catch (std::exception const& e) {
 		std::cout << e.what() << std::endl;

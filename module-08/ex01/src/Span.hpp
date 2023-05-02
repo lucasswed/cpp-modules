@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 10:59:05 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/02 15:54:08 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:38:57 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ class Span
 		unsigned int		shortestSpan(void) const;
 		unsigned int const&	getSize(void) const;
 
+		template<class InputIt>
+		void				addNumbersRange(InputIt first, InputIt last);
+
 		class EmptyArrayException : public std::exception
 		{
 			virtual const char* what() const throw();
@@ -41,6 +44,15 @@ class Span
 		{
 			virtual const char* what() const throw();
 		};
+};
+
+template <class InputIt>
+void	Span::addNumbersRange(InputIt first, InputIt last) {
+	for (InputIt i = first; i != last; i++) {
+		if (this->_array.size() == this->_size)
+			throw FullArrayException();
+		this->_array.insert(*i);
+	}
 };
 
 #endif

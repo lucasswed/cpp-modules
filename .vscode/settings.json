@@ -70,6 +70,12 @@
 		"random": "cpp",
 		"ranges": "cpp",
 		"list": "cpp",
-		"set": "cpp"
+		"set": "cpp",
+		"__hash_table": "cpp",
+		"__node_handle": "cpp",
+		"__split_buffer": "cpp",
+		"__tree": "cpp",
+		"complex": "cpp",
+		"stack": "cpp"
 	}
 }

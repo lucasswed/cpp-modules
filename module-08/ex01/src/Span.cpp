@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:23:33 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/02 15:51:26 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:59:20 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,5 @@ const char*	Span::EmptyArrayException::what(void) const throw() {
 }
 
 const char*	Span::FullArrayException::what(void) const throw() {
-	return ("The array is full! Don't add more numbers that the size of the span!");
+	return ("The array is full! Don't add more numbers than the size of the span!");
 }
