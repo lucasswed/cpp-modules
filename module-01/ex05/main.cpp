@@ -19,10 +19,10 @@ int	main(void) {
 	Harl	newHarl;
 
 	newHarl.complain("DEBUG");
-	newHarl.complain("INFO");
-	newHarl.complain("ERROR");
-	newHarl.complain("WARNING");
-	newHarl.complain("STUPID");
-	newHarl.complain("");
+	// newHarl.complain("INFO");
+	// newHarl.complain("ERROR");
+	// newHarl.complain("WARNING");
+	// newHarl.complain("STUPID");
+	// newHarl.complain("");
 	return 0;
 }

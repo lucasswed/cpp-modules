@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:08:43 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/02 17:19:35 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:46:32 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typename T::iterator	easyfind(T & container, int const& int_to_find) {
 	typename T::iterator occurence = find(container.begin(), container.end(), int_to_find);
 	if (occurence != container.end())
 		return (occurence);
-	throw std::exception();
+	throw std::out_of_range("Integer not found!");
 }
 
 #endif

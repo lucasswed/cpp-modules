@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:26:27 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/02 17:28:06 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:49:39 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void) {
 		for (int i = 0; i < 5; i++)
 			vector_container.push_back(i);
 		std::vector<int>::iterator pos = easyfind(vector_container, 1);
-		std::cout << "found: " << *pos << std::endl;
+		std::cout << "Found: " << *pos << std::endl;
 
 		deque_container.assign(vector_container.begin(), vector_container.end());
 		std::deque<int>::iterator pos2 = easyfind(deque_container, 2);
