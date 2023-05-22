@@ -1,5 +1,6 @@
 {
 	"files.associations": {
+		"*.ejs": "html",
 		"new": "cpp",
 		"*.tcc": "cpp",
 		"cctype": "cpp",
@@ -76,6 +77,7 @@
 		"__split_buffer": "cpp",
 		"__tree": "cpp",
 		"complex": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"map": "cpp"
 	}
 }
