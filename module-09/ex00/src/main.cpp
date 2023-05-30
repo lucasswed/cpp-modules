@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:36:38 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/29 15:30:04 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/05/30 12:30:59 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ int main(int ac, char **av)
 
 	std::map<std::string, float> container;
 	fillMapContainer(data, container);
-	for (std::map<std::string, float>::iterator i = container.begin(); i != container.end(); i++)
-	{
-		std::cout << "key: " << i->first << " value: " << i->second << std::endl;
-	}
+	
 	return (0);
 }
