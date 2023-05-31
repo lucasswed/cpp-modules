@@ -6,25 +6,32 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:36:42 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/29 15:29:59 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/05/31 09:43:17 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-void	fillMapContainer(std::ifstream& data, std::map<std::string, float> &container) {
-	std::string		line;
-	std::string		key;
-	std::string		temp;
-	float			value;
+void fillMapContainer(std::ifstream &data, std::map<std::string, float> &container) {
+  std::string line;
+  std::string key;
+  std::string temp;
+  float value;
 
-	while (true) {
-		std::getline(data, line);
-		if (line.empty())
-			break;
-		key = line.substr(0, line.find(','));
-		temp = line.substr(line.find(',') + 1);
-		value = strtof(temp.c_str(), NULL);
-		container[key] = value;
-	}
+  while (true) {
+    std::getline(data, line);
+    if (line.empty())
+      break;
+    key = line.substr(0, line.find(','));
+    temp = line.substr(line.find(',') + 1);
+    value = strtof(temp.c_str(), NULL);
+    container[key] = value;
+  }
+}
+
+std::string const &takeInputDate(void)
+{
+  std::string inputDate;
+  
+  std::getline(std::cin << std::ws, inputDate);
 }
