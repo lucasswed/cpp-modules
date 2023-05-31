@@ -6,14 +6,15 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:36:38 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/31 14:41:30 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/05/31 18:42:16 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-void  printMap(std::map<std::string, float> container) {
-  for (std::map<std::string, float>::iterator i = container.begin(); i != container.end(); i++)
+template < typename Keys, typename Value >
+void  printMap(std::map<Keys, Value> container) {
+  for (typename std::map<Keys, Value>::iterator i = container.begin(); i != container.end(); i++)
     std::cout << i->first << " " << i->second << std::endl;
 }
 
@@ -25,10 +26,11 @@ int main(int ac, char **av)
     return (1);
   }
 
-  // std::map<std::string, float> database;
-  std::map<std::string, float> wallet;
-  // import_database(database);
+  std::map<std::string, float> database;
+  std::map<std::string, std::string> wallet;
+  import_database(database);
   import_wallet_file(av[1], wallet);
-  // printMap(wallet);
+  std::cout << std::endl;
+  printMap<std::string, std::string>(wallet);
   return (0);
 }

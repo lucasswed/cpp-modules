@@ -6,7 +6,7 @@
 #    By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 15:07:52 by lucas-ma          #+#    #+#              #
-#    Updated: 2023/05/31 13:59:08 by lucas-ma         ###   ########.fr        #
+#    Updated: 2023/05/31 17:23:16 by lucas-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ _BIN	=	./
 CC		=	c++
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g -fsanitize=address -Wshadow -Wno-shadow
 #valgrind --leak-check=full --show-leak-kinds=all ./
-SRCS	=	$(_SRC)main.cpp $(_SRC)BitcoinExchange.cpp
+SRCS	=	$(_SRC)main.cpp $(_SRC)BitcoinExchange.cpp $(_SRC)check_date.cpp
 OBJS	=	$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
 DEPS	=
 LIBS	=
