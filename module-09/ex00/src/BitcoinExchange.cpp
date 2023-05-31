@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:36:42 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/31 14:30:31 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:43:10 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ void fill_map(std::ifstream &data, char del, std::map<std::string, float>& conta
     std::getline(data, line);
     if (line.empty())
       break;
+    std::cout << line << std::endl;
+    if (check_line(line) == false) {
+      key = 
+    }
     key = line.substr(0, line.find(del));
     temp = line.substr(line.find(del) + 1);
     value = strtof(temp.c_str(), NULL);
@@ -76,11 +80,11 @@ bool check_leap_year(int year) {
   }
 }
 
-bool  check_date_validity(int year, int month, int day) {
-  if (check_leap_year(year) && month == 2) {
+// bool  check_date_validity(int year, int month, int day) {
+//   if (check_leap_year(year) && month == 2) {
     
-  }
-}
+//   }
+// }
 
 bool  check_date(std::string const& inputDate) {
   std::string year;
@@ -98,12 +102,12 @@ bool  check_date(std::string const& inputDate) {
 }
 
 void  import_wallet_file(std::string const& fileName, std::map<std::string, float>& wallet) {
-    std::ifstream file(fileName);
+    std::ifstream file(fileName.c_str());
 
   if (!file.is_open())
   {
-    std::cout << "Can't open the data.csv file" << std::endl;
+    std::cout << "Can't open the " << fileName << " file" << std::endl;
     exit(1);
   }
-  fill_map(file, ',', wallet);
+  fill_map(file, '|', wallet);
 }
