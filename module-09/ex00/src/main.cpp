@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:36:38 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/31 18:42:16 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/06/01 17:00:31 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ int main(int ac, char **av)
   }
 
   std::map<std::string, float> database;
-  std::map<std::string, std::string> wallet;
   import_database(database);
-  import_wallet_file(av[1], wallet);
-  std::cout << std::endl;
-  printMap<std::string, std::string>(wallet);
+  import_wallet_file(av[1]);
+  // printMap<std::string, std::string>(wallet);
+  // printMap<std::string, float>(database);
   return (0);
 }
