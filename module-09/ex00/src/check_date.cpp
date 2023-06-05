@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:18:13 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/05/31 18:35:37 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/06/02 10:37:56 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static bool check_leap_year(int year) {
   }
 }
 
-static void  split_date_string(std::string const& inputDate, std::string& year, std::string& month, std::string& day) {
+void  split_date_string(std::string const& inputDate, std::string& year, std::string& month, std::string& day) {
     std::string       token;
     std::stringstream temp(inputDate);
 
@@ -50,7 +50,7 @@ static void  split_date_string(std::string const& inputDate, std::string& year, 
 static bool  check_date_validity(int year, int month, int day) {
   int max_day = 0;
 
-  if (year < 0 || month < 0 || day < 0)
+  if (year < 0 || month < 0 || day < 0 || year > 2023)
     return (false);
   if (check_leap_year(year) && month == 2)
     max_day = 29;
@@ -72,9 +72,9 @@ static bool  check_date_validity(int year, int month, int day) {
         max_day += 2;
       case 2:
         max_day += 28;
-        break;;
-    default:
-      return (false);
+        break;
+      default:
+        return (false);
     }
   }
   if (day > max_day)
@@ -96,7 +96,6 @@ bool  check_date(std::string const& inputDate) {
     return (false);
   if (!check_date_validity(atoi(year.c_str()), atoi(month.c_str()), atoi(day.c_str())))
     return (false);
-  std::cout << "year: " << year << " month: " << month << " day: " << day << std::endl;
   
   return (true);
 }

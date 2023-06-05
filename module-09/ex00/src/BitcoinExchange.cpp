@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:30 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/06/01 17:15:22 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/06/05 08:27:42 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static void fill_database_map(std::ifstream &data, std::map<std::string, float>&
 }
 
 static bool  str_is_num(std::string const& str) {
-  std::cout << str << std::endl;
   if (std::count(str.begin(), str.end(), '.') > 1)
     return (false);
   for (size_t i = 0; i < str.size(); i++)
@@ -48,7 +47,7 @@ static bool number_is_valid(float number) {
 
 bool  check_line(std::string line) {
   if (std::count(line.begin(), line.end(), '|') != 1) {
-    std::cout << "Error, Bad input";
+    std::cout << "Error, Bad input =>";
     return (false);
   }
   std::string key;
@@ -57,21 +56,22 @@ bool  check_line(std::string line) {
   key = line.substr(0, line.find('|') - 1);
   value = line.substr(line.find('|') + 2);
   if (!str_is_num(value)) {
-    std::cout << "Error, value's not a number";
+    std::cout << "Error, value's not a number =>";
     return (false);
   }
   if (number_is_valid(std::strtof(value.c_str(), NULL))) {
-    std::cout << "Error, number is too large or negative";
+    std::cout << "Error, number is too large or negative =>";
     return (false);
   }
   
   if (!check_date(key)) {
-    std::cout << "Error, date is not valid";
+    std::cout << "Error, date is not valid =>";
+    return (false);
   }
   return (true);
 }
 
-void  import_wallet_file(std::string const& fileName) {
+void  import_wallet_file(std::string const& fileName, std::map<std::string, float>& database) {
   std::ifstream file(fileName.c_str());
   std::string key;
   std::string line;
@@ -87,12 +87,13 @@ void  import_wallet_file(std::string const& fileName) {
     std::getline(file, line);
     if (line.empty())
       break;
+    if (line.compare("date | value") == 0)
+      continue;
     if (check_line(line))
     {
       key = line.substr(0, line.find('|') - 1);
       value = line.substr(line.find('|') + 1);
-      std::cout << "key: " << key << " value: " << std::endl;
-      // do_the_conversion(key, value);
+      do_the_conversion(key, std::strtof(value.c_str(), NULL), database);
     }
     else
       std::cout << " " << line << std::endl;
