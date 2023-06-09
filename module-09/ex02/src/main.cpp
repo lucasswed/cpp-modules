@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 11:36:22 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/06/09 09:16:43 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:20:06 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,45 @@ int main(int ac, char **av) {
   
   if (!check_args(av))
     return (1);
-  PmergeMe sort(av);
+
+  PmergeMe to_sort;
+  struct timeval bFillV;
+  struct timeval endFillV;
+  struct timeval bFillL;
+  struct timeval endFillL;
+  struct timeval bSortV;
+  struct timeval endSortV;
+  struct timeval bSortL;
+  struct timeval endSortL;
+
+  gettimeofday(&bFillV, NULL);
+  fill_v_container(to_sort.getVector(), av);
+  gettimeofday(&endFillV, NULL);
+
+  gettimeofday(&bFillL, NULL);
+  fill_l_container(to_sort.getList(), av);
+  gettimeofday(&endFillL, NULL);
+
+  std::cout << "Before: ";
+  to_sort.print_vector();
+
+  gettimeofday(&bSortV, NULL);
+  mergeInsertionSortVector(to_sort.getVector());
+  gettimeofday(&endSortV, NULL);
+  
+  gettimeofday(&bSortL, NULL);
+  mergeInsertionSortList(to_sort.getList());
+  gettimeofday(&endSortL, NULL);
+
+  std::cout << "After: ";
+  to_sort.print_vector();
+
+  std::cout << "Time to proccess a range of " << ac - 1 << " elements using std::vector ";
+  std::cout << (endFillV.tv_usec - bFillV.tv_usec) + (endSortV.tv_usec - bSortV.tv_usec);
+  std::cout << " microseconds"<< std::endl;
+
+  std::cout << "Time to proccess a range of " << ac - 1 << " elements using std::list ";
+  std::cout << (endFillL.tv_usec - bFillL.tv_usec) + (endSortL.tv_usec - bSortL.tv_usec);
+  std::cout << " microseconds"<< std::endl;
+  return (0);
 }

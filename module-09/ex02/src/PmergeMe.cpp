@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 11:36:43 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/06/09 11:26:35 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/06/09 15:53:30 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,36 @@ PmergeMe::PmergeMe(void) {
 }
 
 PmergeMe::PmergeMe(PmergeMe const& src) {
-  if (this != &src)
-    *this = src;
-}
-
-PmergeMe::PmergeMe(char **args) {
-  this->time_to_fill_v = fill_v_container(this->v_container, args);
-  this->time_to_fill_l = fill_l_container(this->l_container, args);
-  std::cout << "Before: ";
-  this->print_vector_container(this->v_container);
-  std::cout << "time to proccess vector: " << (float)time_to_fill_v/CLOCKS_PER_SEC * 1000 << "ms" << std::endl;
-  std::cout << "time to proccess list: " << (float)time_to_fill_l/CLOCKS_PER_SEC * 1000 << "ms" << std::endl;
-  // this->time_to_sort_v = this->sort_v_container();
-  // this->time_to_sort_l = this->sort_l_container();
+  *this = src;
 }
 
 PmergeMe::~PmergeMe(void) {
 }
 
-void            PmergeMe::print_vector_container(std::vector<int> c) const {
-  for (std::vector<int>::iterator i = c.begin(); i != c.end(); i++)
+void            PmergeMe::print_vector(void) const {
+  for (std::vector<int>::const_iterator i = this->v_container.begin(); i != this->v_container.end(); i++)
     std::cout << *i << " ";
   std::cout << std::endl;
 }
 
-PmergeMe&       PmergeMe::operator=()
+void            PmergeMe::print_list(void) const {
+  for (std::list<int>::const_iterator it = this->l_container.begin(); it != this->l_container.end(); it++)
+    std::cout << *it << " ";
+  std::cout << std::endl;
+}
+
+PmergeMe&       PmergeMe::operator=(PmergeMe const& rhs) {
+  if (this != &rhs) {
+    this->l_container = rhs.l_container;
+    this->v_container = rhs.v_container;
+  }
+  return (*this);
+}
+
+std::vector<int>&  PmergeMe::getVector(void) {
+  return (this->v_container);
+}
+
+std::list<int>&   PmergeMe::getList(void) {
+  return (this->l_container);
+}
