@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 11:36:22 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/06/05 12:46:43 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/06/09 09:16:43 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ int main(int ac, char **av) {
   
   if (!check_args(av))
     return (1);
+  PmergeMe sort(av);
 }
