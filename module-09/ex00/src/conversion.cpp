@@ -6,7 +6,7 @@
 /*   By: lucas-ma <lucas-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:05:18 by lucas-ma          #+#    #+#             */
-/*   Updated: 2023/06/05 08:32:19 by lucas-ma         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:42:06 by lucas-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ std::string find_conversion_date(std::string const& key, std::map<std::string, f
     if (key == i->first)
       return (i->first);
     if (i->first.compare(key) > 0)
-    {
-      i--;
-      return (i->first);
-    }
+      return (last);
     last = i->first;
   }
   return (last);
